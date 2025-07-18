@@ -2,6 +2,7 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverManager {
 
@@ -21,7 +22,9 @@ public class WebDriverManager {
 
     public void start() {
         if (driver == null) {
-            driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            driver = new FirefoxDriver(options);
             driver.manage().window().maximize();
         }
     }
