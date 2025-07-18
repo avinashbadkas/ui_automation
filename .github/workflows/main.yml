@@ -32,14 +32,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y firefox
 
-          - name: Debug Firefox installation
-            run: |
-              echo "Checking Firefox binary location..."
-              which firefox
-              ls -l /usr/bin/firefox
-              ls -l /usr/lib/firefox/firefox
-              file /usr/bin/firefox
-              file /usr/lib/firefox/firefox
+      - name: Debug Firefox installation
+        run: |
+            echo "Checking Firefox binary location..."
+            which firefox
+            ls -l /usr/bin/firefox
+            ls -l /usr/lib/firefox/firefox
+            file /usr/bin/firefox
+            file /usr/lib/firefox/firefox
 
 
 
