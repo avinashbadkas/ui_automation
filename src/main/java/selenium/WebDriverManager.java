@@ -24,6 +24,7 @@ public class WebDriverManager {
         if (driver == null) {
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
+            options.setBinary("/usr/lib/firefox/firefox");
             driver = new FirefoxDriver(options);
             driver.manage().window().maximize();
         }
