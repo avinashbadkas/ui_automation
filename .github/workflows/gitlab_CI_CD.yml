@@ -14,3 +14,7 @@ test-job:
   script:
     - mvn test
 
+on:
+  workflow_dispatch:
+
+
