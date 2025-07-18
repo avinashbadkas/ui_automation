@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: selenium/standalone-firefox:latest
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
