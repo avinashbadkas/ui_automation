@@ -20,27 +20,21 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
       - name: Remove Snap Firefox completely
         run: |
-            sudo snap remove firefox || true
-            sudo apt-get purge firefox -y || true
-            sudo rm -rf /snap/firefox /var/snap/firefox /usr/bin/firefox /snap/bin/firefox
-            
+          sudo snap remove firefox || true
+          sudo apt-get purge firefox -y || true
+          sudo rm -rf /snap/firefox /var/snap/firefox /snap/bin/firefox /usr/bin/firefox
+
+      - name: Prevent auto-Snap fallback
+        run: |
+          echo -e 'Package: firefox\nPin: release o=Ubuntu\nPin-Priority: -1' | sudo tee /etc/apt/preferences.d/firefox-no-snap
+
       - name: Install Firefox from Mozilla PPA
         run: |
-              sudo add-apt-repository -y ppa:mozillateam/ppa
-              sudo apt-get update
-              sudo apt-get install -y firefox
-
-      - name: Debug Firefox installation
-        run: |
-            echo "Checking Firefox binary location..."
-            which firefox
-            ls -l /usr/bin/firefox
-            ls -l /usr/lib/firefox/firefox
-            file /usr/bin/firefox
-            file /usr/lib/firefox/firefox
+            sudo add-apt-repository -y ppa:mozillateam/ppa
+            sudo apt-get update
+            sudo apt-get install -y firefox
 
 
 
