@@ -2,6 +2,7 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -23,9 +24,11 @@ public class WebDriverManager {
 
     public void start() {
         if (driver == null) {
-            FirefoxOptions options = new FirefoxOptions();
-          //  options.addArguments("--headless");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
 
+            //  options.addArguments("--headless");
+            System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
