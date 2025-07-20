@@ -1,6 +1,7 @@
 package selenium;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -23,9 +24,9 @@ public class WebDriverManager {
     public void start() {
         if (driver == null) {
             FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--headless");
+          //  options.addArguments("--headless");
 
-            driver = new FirefoxDriver(options);
+            driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
     }
