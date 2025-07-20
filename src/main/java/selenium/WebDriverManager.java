@@ -26,7 +26,7 @@ public class WebDriverManager {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
-            options.addArguments("--headless=new", "--disable-gpu", "--no-sandbox");
+            options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
             //  options.addArguments("--headless");
             System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
             driver = new ChromeDriver(options);
