@@ -42,4 +42,4 @@ jobs:
       - name: kill the chrome process
         run: pkill chrome | echo "task is not runnng"
       - name: build maven
-        run: mvn clean test
+        run: mvn clean test -Dbrowser=${{inputs.browser}}
