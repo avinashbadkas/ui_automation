@@ -1,10 +1,8 @@
-name : firefox pipeline
+name: firefox pipeline
 
 jobs:
-    test:
-       runs-on: ubuntu-latest
-       steps:
-        - name: Checkout code
-        - uses: actions/checkout@v3
-  
-
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
