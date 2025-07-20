@@ -27,6 +27,7 @@ jobs:
         run: |
          echo "finding chrome executable in system"
          which google-chrome || echo "chrome not found"
+         cd /usr/bin
          ls
       
         
