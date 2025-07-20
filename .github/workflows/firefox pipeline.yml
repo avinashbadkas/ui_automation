@@ -24,7 +24,7 @@ jobs:
           echo "Full path using readlink:"
           readlink -f $(which firefox)
       - name: find chrome browser
-        run: 
+        run: |
          echo "finding chrome executable in system"
          which google-chrome || echo "chrome not found"
       
