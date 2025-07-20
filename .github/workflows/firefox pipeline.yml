@@ -7,7 +7,7 @@ on:
       browser:
        description: set browsername for test execution
        required: true
-       default: ''
+       default: none
        type: choice
        options:
           - chrome
