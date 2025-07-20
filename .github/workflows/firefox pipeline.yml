@@ -27,6 +27,7 @@ jobs:
         run: |
          echo "finding chrome executable in system"
          which chromedriver || echo "chrome not found"
+         chmod +x /user/bin/chromedriver
          cd /usr/bin
          ls
       
