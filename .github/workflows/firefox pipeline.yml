@@ -11,8 +11,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: show java version
-        run: echo "java version is" 
-             java -version 
+      - name: Show Java version with message
+        run: |
+          echo "🔧 Java version is:"
+          java -version 
       - name: build maven
         run: mvn clean install
