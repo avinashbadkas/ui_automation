@@ -17,21 +17,15 @@ jobs:
           java -version
           echo "current working directory"
           pwd
-      - name: Find Firefox path
-        run: |
-          echo "🔍 Locating Firefox binary..."
-          which firefox
-          echo "Full path using readlink:"
-          readlink -f $(which firefox)
       - name: find chrome browser
         run: |
          echo "finding chrome executable in system"
          which chromedriver || echo "chrome not found"
          #chmod +x /usr/bin/chromedriver
-         cd /usr/bin
+         #cd /usr/bin
          ls
       
       - name: kill the chrome process
-        run: pkill chrome | echo "task is ont rnnng"
+        run: pkill chrome | echo "task is not runnng"
       - name: build maven
         run: mvn clean test
