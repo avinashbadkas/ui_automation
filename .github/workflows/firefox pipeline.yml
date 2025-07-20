@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifacts@v4
         with:
           name: Test Reoprt
-          path: ''
+          path: /home/runner/work/ui_automation/ui_automation/target/reports.html
