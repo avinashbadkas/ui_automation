@@ -33,4 +33,4 @@ jobs:
       
         
       - name: build maven
-        run: mvn clean
+        run: mvn clean install
