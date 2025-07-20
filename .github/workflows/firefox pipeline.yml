@@ -24,4 +24,4 @@ jobs:
           echo "Full path using readlink:"
           readlink -f $(which firefox)
       - name: build maven
-        run: mvn clean
+        run: mvn clean install
