@@ -12,8 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Show Java version with message
-        run: |
-          echo "🔧 Java version is:"
+        run:
+          echo "Java version is:"
           java -version 
       - name: build maven
-        run: mvn clean install
+        run: mvn clean
