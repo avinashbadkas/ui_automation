@@ -1,6 +1,7 @@
 name: firefox pipeline
 
 on:
+ #https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
   workflow_dispatch: 
     inputs:
       browser:
@@ -8,9 +9,8 @@ on:
        required: true
        default: chrome
        type: string
-    
-#    push:
-    #  branches: [main]
+  push:
+     branches: [main]
 
 jobs:
   test:
