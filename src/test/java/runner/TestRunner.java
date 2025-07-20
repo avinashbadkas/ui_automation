@@ -13,7 +13,8 @@ import selenium.WebDriverManager;
 
 @CucumberOptions(glue = "stepDefinition",
         features = "src/test/resources/features",
-        tags = "@regression")
+        tags = "@regression",plugin = "html:target/reports.html",
+        monochrome = true)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 

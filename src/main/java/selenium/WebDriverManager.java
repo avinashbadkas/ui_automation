@@ -25,12 +25,10 @@ public class WebDriverManager {
     public void start() {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
-            options.addArguments("--headless", "--disable-gpu", "--no-sandbox");
-            //  options.addArguments("--headless");
+            options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
             System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
             driver = new ChromeDriver(options);
-            driver.manage().window().maximize();
         }
     }
 
