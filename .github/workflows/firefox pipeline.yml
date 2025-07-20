@@ -23,5 +23,11 @@ jobs:
           which firefox
           echo "Full path using readlink:"
           readlink -f $(which firefox)
+      - name: find chrome browser
+        run: 
+         echo "finding chrome executable in system"
+         which google-chrome || echo "chrome not found"
+      
+        
       - name: build maven
         run: mvn clean install
