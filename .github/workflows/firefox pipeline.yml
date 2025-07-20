@@ -14,6 +14,8 @@ jobs:
       - name: Show Java version with message
         run: |
           echo "Java version is:"
-          java -version"
+          java -version
+          echo "current working directory"
+          pwd
       - name: build maven
         run: mvn clean
