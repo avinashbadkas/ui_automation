@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Show Java version with message
         run: |
-          echo "Java version is: $java -version"
+          echo "Java version is:"
+          java -version"
       - name: build maven
         run: mvn clean
