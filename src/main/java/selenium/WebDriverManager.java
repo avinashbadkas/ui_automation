@@ -29,7 +29,7 @@ public class WebDriverManager {
 
             //  options.addArguments("--headless");
             System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
             driver.manage().window().maximize();
         }
     }
