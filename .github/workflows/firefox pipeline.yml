@@ -42,8 +42,12 @@ jobs:
          #chmod +x /usr/bin/chromedriver
          #cd /usr/bin
          ls
-      
       - name: kill the chrome process
         run: pkill chrome | echo "task is not runnng"
       - name: build maven
         run: mvn clean test -Dbrowser=${{inputs.browser}}
+      - name: upload the artifacts
+        uses: actions/upload-artifacts@v4
+        with:
+          name: Test Reoprt
+          path: ''
