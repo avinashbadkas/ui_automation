@@ -7,8 +7,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+       
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: show java version
+        run: echo "java version is" java -version 
       - name: build maven
         run: mvn clean install
