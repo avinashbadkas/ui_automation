@@ -8,7 +8,11 @@ on:
        description: set browsername for test execution
        required: true
        default: ''
-       type: string
+       type: choice
+       options:
+          - chrome
+          - safari
+          
   #push:
     # branches: [main]
 
