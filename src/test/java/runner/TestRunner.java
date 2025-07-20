@@ -9,6 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import selenium.WebDriverManager;
 
 @CucumberOptions(glue = "stepDefinition",
@@ -18,14 +19,11 @@ import selenium.WebDriverManager;
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-   /* @Before
-    public void init() {
-       WebDriverManager.getInstance().start();
+    @Parameters("browser")
+    @BeforeTest
+    public void setEnvVariable(String parameter){
+        System.setProperty("browser",parameter);
     }
 
-    @After
-    public void close() {
-        WebDriverManager.getInstance().close();
-    }*/
 
 }

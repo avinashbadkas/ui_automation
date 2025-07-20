@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+/*singleton web driver class*/
 public class WebDriverManager {
 
     private WebDriver driver;
@@ -27,14 +28,14 @@ public class WebDriverManager {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
-            System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\avi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
             driver = new ChromeDriver(options);
         }
     }
 
     public void close() {
         driver.quit();
-        driver=null;
+        driver = null;
     }
 
     public WebDriver getDriver() {

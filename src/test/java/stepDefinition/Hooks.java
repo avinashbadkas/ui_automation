@@ -20,42 +20,27 @@ public class Hooks {
 
     @Before
     public void init(){
+        System.out.println("Browser: "+System.getProperty("browser"));
+        String browser=System.getProperty("browser");
+        if(browser.equals("chrome"))
         WebDriverManager.getInstance().start();
+        else
+            System.out.println("Browser is not provided");
     }
     @After(order = 0)
     public void close(){
         WebDriverManager.getInstance().close();
     }
     @After(order = 1)
-    public void takeScraenshotOnFailure(Scenario scenario) {
+    public void takeScreenShot(Scenario scenario) {
 
         if (scenario.isFailed()) {
 
             try {
-                // Take screenshot as a file
-                File srcFile = ((TakesScreenshot) WebDriverManager.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
-
-                // Timestamp for uniqueness
-                String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-
-                // Clean scenario name
-                String name = scenario.getName().replaceAll("[^a-zA-Z0-9-_]", "_");
-
-                // Destination path
-                Path destPath = Path.of("target/screenshots", name + "_" + timestamp + ".png");
-
-                // Ensure folder exists
-                Files.createDirectories(destPath.getParent());
-
-                // Copy file
-                Files.copy(srcFile.toPath(), destPath, StandardCopyOption.REPLACE_EXISTING);
-
-                // Attach to Cucumber report
-                byte[] screenshot = Files.readAllBytes(destPath);
+                byte[] screenshot = ((TakesScreenshot) WebDriverManager.getInstance().getDriver()).getScreenshotAs(OutputType.BYTES);
                 scenario.attach(screenshot, "image/png", "Failure Screenshot");
 
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
                 System.out.println("Failed to save screenshot: " + e.getMessage());
             }
         }
