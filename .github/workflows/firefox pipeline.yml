@@ -31,6 +31,7 @@ jobs:
          cd /usr/bin
          ls
       
-        
+      - name: kill the chrome process
+        run: pkill chrome | echo "task is ont rnnng"
       - name: build maven
         run: mvn clean install
