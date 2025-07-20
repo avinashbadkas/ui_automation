@@ -5,9 +5,9 @@ on:
   workflow_dispatch: 
     inputs:
       browser:
-       description: set browsername for test execution
+       description: set browser name for test execution
        required: true
-       default: none
+       default: safari
        type: choice
        options:
           - chrome
