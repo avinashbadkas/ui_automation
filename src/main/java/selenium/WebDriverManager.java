@@ -28,7 +28,8 @@ public class WebDriverManager {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\avi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+            //System.setProperty("webdriver.chrome.driver", "C:\\Users\\avi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
             driver = new ChromeDriver(options);
         }
     }

@@ -26,6 +26,7 @@ public class Hooks {
         WebDriverManager.getInstance().start();
         else
             System.out.println("Browser is not provided");
+           
     }
     @After(order = 0)
     public void close(){
