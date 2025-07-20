@@ -11,6 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: set JDK version
+        uses: actions/setup-java@4
+        with:
+            distribution: 'temurin'
+            java-version: 19
+          
       - name: Show Java version with message
         run: |
           echo "Java version is:"
